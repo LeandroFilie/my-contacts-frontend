@@ -14,7 +14,6 @@ export default function ContactForm({ buttonLabel }) {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [category, setCategory] = useState('');
-  // eslint-disable-next-line no-unused-vars
   const [errors, setErrors] = useState([]);
 
   function handleNameChange(event) {
@@ -51,25 +50,31 @@ export default function ContactForm({ buttonLabel }) {
     }
   }
 
+  function getErrorMessageByFieldName(fieldName) {
+    return errors.find((error) => error.field === fieldName)?.message;
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <FormGroup>
+      <FormGroup error={getErrorMessageByFieldName('name')}>
         <Input
           placeholder="Nome"
           value={name}
           onChange={handleNameChange}
+          error={getErrorMessageByFieldName('name')}
         />
       </FormGroup>
 
-      <FormGroup>
+      <FormGroup error={getErrorMessageByFieldName('email')}>
         <Input
           placeholder="E-mail"
           value={email}
           onChange={handleEmailChange}
+          error={getErrorMessageByFieldName('email')}
         />
       </FormGroup>
 
