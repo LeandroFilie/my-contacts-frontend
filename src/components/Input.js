@@ -17,6 +17,8 @@ export default styled.input`
 
   transition: all .2s ease-in;
 
+  appearance: none;
+
   &:focus {
     border: 2px solid ${({ theme }) => theme.colors.primary.main};
     transition: all .2s ease-in;
