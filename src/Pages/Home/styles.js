@@ -50,12 +50,11 @@ export const Header = styled.header`
 }
 `;
 
-export const ListContainer = styled.div`
+export const ListHeader = styled.header`
   margin-top: 24px;
+  margin-bottom: 8px;
 
-  header {
-    margin-bottom: 8px;
-    button {
+  button {
     background: transparent;
     border: none;
     display: flex;
@@ -67,7 +66,7 @@ export const ListContainer = styled.div`
       color: ${({ theme }) => theme.colors.primary.main};
     }
   }
-  }
+
 `;
 
 export const Card = styled.div`

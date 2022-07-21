@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import {
   Card,
-  Container, InputSearchContainer, Header, ListContainer,
+  Container, InputSearchContainer, Header, ListHeader,
 } from './styles';
 
 import arrow from '../../assets/images/icons/arrow.svg';
@@ -35,14 +35,12 @@ export default function Home() {
         <Link to="/new">Novo Contato</Link>
       </Header>
 
-      <ListContainer>
-        <header>
-          <button type="button">
-            <span>Nome</span>
-            <img src={arrow} alt="Arrow" />
-          </button>
-        </header>
-      </ListContainer>
+      <ListHeader>
+        <button type="button">
+          <span>Nome</span>
+          <img src={arrow} alt="Arrow" />
+        </button>
+      </ListHeader>
 
       {contacts.map((contact) => (
         <Card key={contact.id}>
