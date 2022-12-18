@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import isEmailValid from '../../utils/isEmailValid';
 import formatPhone from '../../utils/formatPhone';
 import useErrors from '../../hooks/useErrors';
-import CategoriesService from '../../services/CategoriesServices';
+import CategoriesService from '../../services/CategoriesService';
 
 import { ButtonContainer } from './styles';
 
