@@ -23,4 +23,9 @@ export default styled.select`
     border: 2px solid ${({ theme }) => theme.colors.primary.main};
     transition: all .2s ease-in;
   }
+
+  &[disabled]{
+    background-color: ${({ theme }) => theme.colors.gray[100]};
+    border-color: ${({ theme }) => theme.colors.gray[200]};
+  }
 `;
