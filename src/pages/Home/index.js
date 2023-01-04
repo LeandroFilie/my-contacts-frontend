@@ -28,6 +28,7 @@ import magnifierQuestion from '../../assets/images/magnifier-question.svg';
 import ContactService from '../../services/ContactService';
 
 import toast from '../../utils/toast';
+import formatPhone from '../../utils/formatPhone';
 
 export default function Home() {
   const [contacts, setContacts] = useState([]);
@@ -208,7 +209,7 @@ export default function Home() {
                   )}
                 </div>
                 <span>{contact.email}</span>
-                <span>{contact.phone}</span>
+                <span>{formatPhone(contact.phone)}</span>
               </div>
 
               <div className="actions">
