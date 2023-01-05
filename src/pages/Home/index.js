@@ -25,7 +25,7 @@ import sad from '../../assets/images/sad.svg';
 import emptyBox from '../../assets/images/empty-box.svg';
 import magnifierQuestion from '../../assets/images/magnifier-question.svg';
 
-import ContactService from '../../services/ContactService';
+import ContactsService from '../../services/ContactsService';
 
 import toast from '../../utils/toast';
 import formatPhone from '../../utils/formatPhone';
@@ -50,7 +50,7 @@ export default function Home() {
     try {
       setIsLoading(true);
 
-      const contactsList = await ContactService.listContacts(orderBy);
+      const contactsList = await ContactsService.listContacts(orderBy);
 
       setHasError(false);
       setContacts(contactsList);
@@ -90,7 +90,7 @@ export default function Home() {
   async function handleConfirmDeleteContact() {
     try {
       setIsLoadingDelete(true);
-      await ContactService.deleteContact(contactBeingDeleted.id);
+      await ContactsService.deleteContact(contactBeingDeleted.id);
 
       setContacts((prevState) => prevState.filter(
         (contact) => contact.id !== contactBeingDeleted.id,

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import ContactForm from '../../components/ContactForm';
 import PageHeader from '../../components/PageHeader';
-import ContactService from '../../services/ContactService';
+import ContactsService from '../../services/ContactsService';
 import toast from '../../utils/toast';
 
 export default function NewContact() {
@@ -16,7 +16,7 @@ export default function NewContact() {
         category_id: formData.categoryId,
       };
 
-      await ContactService.createContact(contact);
+      await ContactsService.createContact(contact);
 
       contactFormRef.current.resetFields();
 

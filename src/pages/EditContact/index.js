@@ -5,7 +5,7 @@ import PageHeader from '../../components/PageHeader';
 import Loader from '../../components/Loader';
 import ContactForm from '../../components/ContactForm';
 
-import ContactService from '../../services/ContactService';
+import ContactsService from '../../services/ContactsService';
 import toast from '../../utils/toast';
 import useSafeAsyncAction from '../../hooks/useSafeAsyncAction';
 
@@ -20,7 +20,7 @@ export default function EditContact() {
   useEffect(() => {
     async function loadContact() {
       try {
-        const contact = await ContactService.getContactById(id);
+        const contact = await ContactsService.getContactById(id);
         safeAsyncAction(() => {
           contactFormRef.current.setFieldsValues(contact);
           setContactName(contact.name);
@@ -49,7 +49,7 @@ export default function EditContact() {
         category_id: formData.categoryId,
       };
 
-      const contactData = await ContactService.updateContact(id, contact);
+      const contactData = await ContactsService.updateContact(id, contact);
       setContactName(contactData.name);
 
       toast({
