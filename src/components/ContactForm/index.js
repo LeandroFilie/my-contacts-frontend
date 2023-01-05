@@ -34,7 +34,7 @@ export default forwardRef(({ buttonLabel, onSubmit }, ref) => {
       setName(contact.name ?? '');
       setEmail(contact.email ?? '');
       setPhone(formatPhone(contact.phone) ?? '');
-      setCategoryId(contact.category_id ?? '');
+      setCategoryId(contact.category.id ?? '');
     },
     resetFields: () => {
       setName('');
