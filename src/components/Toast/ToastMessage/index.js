@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import { Container } from './styles';
 
 import xCircleIcon from '../../../assets/images/icons/x-circle.svg';
 import checkCircleIcon from '../../../assets/images/icons/check-circle.svg';
 
-export default function ToastMessage({
+function ToastMessage({
   message, onRemoveMessage, isLeaving, animatedRef,
 }) {
   useEffect(() => {
@@ -36,3 +36,5 @@ export default function ToastMessage({
     </Container>
   );
 }
+
+export default memo(ToastMessage);
