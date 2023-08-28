@@ -20,9 +20,9 @@ O layout do projeto foi desenvolvido através da plataforma [Figma](figma.com). 
 Clone o projeto, acesse a pasta e instale as dependências
 
 ```bash
-$ git clone https://github.com/LeandroFilie/mycontacts-backend.git
+$ git clone https://github.com/LeandroFilie/mycontacts-frontend.git
 
-$ cd mycontacts-backend
+$ cd mycontacts-frontend
 
 $ yarn
 ```
